@@ -91,7 +91,7 @@ MIT — see [LICENSE](LICENSE)
 
 ## The Story
 
-CivicOS started in Dorchester, Boston. I watched my neighbors struggle to find housing assistance and food programs scattered across dozens of government URLs. I built DOR101 to solve it for my community. Then I realized every city has this problem — and almost no city has the engineering resources to build the extraction and normalization layer.
+CivicOS started in Dorchester, Boston. I watched my neighbors struggle to find housing assistance and food programs scattered across dozens of government URLs. I built DOR101 to solve it for my community. Then I realized every city has this problem, and almost no city has the engineering resources to build the extraction and normalization layer.
 
 CivicOS is that layer, open-sourced, so any developer or city can deploy it and give their residents the same tool.
 
