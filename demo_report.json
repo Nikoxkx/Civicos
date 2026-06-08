@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-06-08T14:59:22.851314",
+  "sources_scraped": 3,
+  "total_programs_found": 13,
+  "programs_stored_new": 13,
+  "programs_updated": 0,
+  "api_verification": {
+    "health": true,
+    "categories": 9,
+    "cities": 1,
+    "programs": 13,
+    "housing": 13,
+    "city_detail": "Boston",
+    "search": 7
+  },
+  "programs": [
+    {
+      "name": "Seniors Save",
+      "category": "housing",
+      "description": "Helps seniors replace failing heating systems to ensure they are ready for winter.",
+      "benefit_amount": "varies",
+      "is_ongoing": true
+    },
+    {
+      "name": "ONE+Boston",
+      "category": "housing",
+      "description": "Offers the lowest fixed interest rates available for a 30-year mortgage plus downpayment and closing-cost assistance.",
+      "benefit_amount": "low-interest mortgage",
+      "is_ongoing": true
+    },
+    {
+      "name": "Additional Dwelling Unit",
+      "category": "housing",
+      "description": "Allows owner occupants to carve out a new living space within their existing home.",
+      "benefit_amount": null,
+      "is_ongoing": true
+    },
+    {
+      "name": "Foreclosure Prevention",
+      "category": "housing",
+      "description": "Provides counseling and assistance to help families avoid foreclosure.",
+      "benefit_amount": null,
+      "is_ongoing": true
+    },
+    {
+      "name": "Home Repair Loan",
+      "category": "housing",
+      "description": "Provides loans and funding for homeowners to complete home improvements and repairs.",
+      "benefit_amount": "varies",
+      "is_ongoing": true
+    },
+    {
+      "name": "Housing Stability",
+      "category": "housing",
+      "description": "Flexible funding pool to help Boston residents at risk of or experiencing homelessness secure or maintain housing through one-time financial assistance.",
+      "benefit_amount": "varies",
+      "is_ongoing": true
+    },
+    {
+      "name": "First-time homebuyer",
+      "category": "housing",
+      "description": "Offers training, financial help, and counseling to first-time homebuyers.",
+      "benefit_amount": "downpayment assistance",
+      "is_ongoing": true
+    },
+    {
+      "name": "Supportive Housing",
+      "category": "housing",
+      "description": "Provides housing combined with supportive services for vulnerable populations including those experiencing homelessness.",
+      "benefit_amount": null,
+      "is_ongoing": true
+    },
+    {
+      "name": "Housing crisis",
+      "category": "housing",
+      "description": "Provides emergency housing assistance and case management for tenants at risk of eviction.",
+      "benefit_amount": null,
+      "is_ongoing": true
+    },
+    {
+      "name": "Bridging the Gap",
+      "category": "housing",
+      "description": "Flexible funding pool to help Boston residents at risk of or experiencing homelessness secure or maintain housing through one-time financial assistance.",
+      "benefit_amount": "varies",
+      "is_ongoing": true
+    },
+    {
+      "name": "Supportive Housing",
+      "category": "housing",
+      "description": "Provides housing combined with supportive services for vulnerable populations including those experiencing homelessness.",
+      "benefit_amount": null,
+      "is_ongoing": true
+    },
+    {
+      "name": "HOUSING STABILITY",
+      "category": "housing",
+      "description": "Flexible funding pool to help Boston residents at risk of or experiencing homelessness secure or maintain housing through one-time financial assistance.",
+      "benefit_amount": "varies",
+      "is_ongoing": true
+    },
+    {
+      "name": "Eviction Prevention",
+      "category": "housing",
+      "description": "Provides emergency housing assistance and case management for tenants at risk of eviction.",
+      "benefit_amount": null,
+      "is_ongoing": true
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: civicos-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-civicos}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-civicos_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-civicos}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./packages/db/migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-civicos} -d ${POSTGRES_DB:-civicos}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: packages/api/Dockerfile
+    container_name: civicos-api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-civicos}:${POSTGRES_PASSWORD:-civicos_dev}@db:5432/${POSTGRES_DB:-civicos}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./packages/api:/app/packages/api
+      - ./packages/ingestion:/app/packages/ingestion
+      - ./packages/extraction:/app/packages/extraction
+    command: uvicorn packages.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  pgdata:

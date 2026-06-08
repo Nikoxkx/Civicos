@@ -1,0 +1,85 @@
+[project]
+name = "civicos"
+version = "0.1.0"
+description = "Open-source civic data intelligence platform — ingest, parse, structure, and serve government benefit data via REST API"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+dependencies = [
+    # API server
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+
+    # Database
+    "sqlalchemy[asyncio]>=2.0.30",
+    "asyncpg>=0.29.0",
+    "alembic>=1.13.0",
+
+    # Validation
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+
+    # HTTP client
+    "httpx>=0.27.0",
+
+    # Browser automation
+    "playwright>=1.44.0",
+
+    # PDF parsing
+    "pdfminer.six>=20231228",
+
+    # LLM extraction
+    "anthropic>=0.30.0",
+
+    # Structured logging
+    "structlog>=24.2.0",
+
+    # Utilities
+    "python-dotenv>=1.0.0",
+    "tenacity>=8.3.0",
+
+    # CLI
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.4.0",
+    "mypy>=1.10.0",
+]
+
+[project.scripts]
+civicos = "packages.cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/Yeisbel/civicos"
+Repository = "https://github.com/Yeisbel/civicos"
+Issues = "https://github.com/Yeisbel/civicos/issues"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E", "W",    # pycodestyle
+    "F",         # pyflakes
+    "I",         # isort
+    "B",         # flake8-bugbear
+    "C4",        # flake8-comprehensions
+    "SIM",       # flake8-simplify
+    "RUF",       # ruff-specific
+]
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"packages/extraction/prompts.py" = ["E501"]
+"packages/api/routers/sources.py" = ["E402"]
+"packages/extraction/mock_client.py" = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

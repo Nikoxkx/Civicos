@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75.8", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "civicos"
+version = "0.1.0"
+description = "Python SDK for the CivicOS civic data API"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["httpx>=0.25"]
+
+[project.urls]
+Homepage = "https://github.com/Yeisbel/civicos"
+Repository = "https://github.com/Yeisbel/civicos"
+
+[tool.setuptools.packages.find]
+where = ["src"]
